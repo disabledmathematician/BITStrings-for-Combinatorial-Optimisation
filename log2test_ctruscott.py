@@ -4,8 +4,7 @@ from __future__ import annotations
 from queue import deque
 import sys
 
-"""
-0b1
+"""0b1
 0b10
 0b100
 0b1000
@@ -27,9 +26,9 @@ import sys
 [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144]
 ['L']
 ['L inverse']
-deque([<__main__.RubiksState object at 0x7497c72490>, <__main__.RubiksState object at 0x7497c725d0>, <__main__.RubiksState object at 0x7497c795b0>, <__main__.RubiksState object at 0x7497c78b00>, <__main__.RubiksState object at 0x7497c53410>, <__main__.RubiksState object at 0x7497c5b570>, <__main__.RubiksState object at 0x7497b55bf0>, <__main__.RubiksState object at 0x7497ca9750>, <__main__.RubiksState object at 0x7497ca9a50>, <__main__.RubiksState object at 0x7497c47200>, <__main__.RubiksState object at 0x7497c47890>, <__main__.RubiksState object at 0x7497c8bcb0>])
-Liszt: [(<__main__.RubiksState object at 0x7497c72490>, <__main__.RubiksState object at 0x7497c72490>), (<__main__.RubiksState object at 0x7497c725d0>, <__main__.RubiksState object at 0x7497c725d0>), (<__main__.RubiksState object at 0x7497c795b0>, <__main__.RubiksState object at 0x7497c795b0>), (<__main__.RubiksState object at 0x7497c78b00>, <__main__.RubiksState object at 0x7497c78b00>), (<__main__.RubiksState object at 0x7497c53410>, <__main__.RubiksState object at 0x7497c53410>), (<__main__.RubiksState object at 0x7497c5b570>, <__main__.RubiksState object at 0x7497c5b570>), (<__main__.RubiksState object at 0x7497b55bf0>, <__main__.RubiksState object at 0x7497b55bf0>), (<__main__.RubiksState object at 0x7497ca9750>, <__main__.RubiksState object at 0x7497ca9750>), (<__main__.RubiksState object at 0x7497ca9a50>, <__main__.RubiksState object at 0x7497ca9a50>), (<__main__.RubiksState object at 0x7497c47200>, <__main__.RubiksState object at 0x7497c47200>), (<__main__.RubiksState object at 0x7497c47890>, <__main__.RubiksState object at 0x7497c47890>), (<__main__.RubiksState object at 0x7497c8bcb0>, <__main__.RubiksState object at 0x7497c8bcb0>)]
-{1: [], 2: [], 4: [], 8: [], 16: [], 32: [], 64: [], 128: [], 256: [], 512: [], 1024: [], 2048: [], 4096: [], 8192: [], 16384: [], 32768: [], 65536: [], 131072: [], 262144: [], <__main__.RubiksState object at 0x7497c72490>: [<__main__.RubiksState object at 0x7497c72490>, <__main__.RubiksState object at 0x7497c72490>], <__main__.RubiksState object at 0x7497c725d0>: [<__main__.RubiksState object at 0x7497c725d0>, <__main__.RubiksState object at 0x7497c725d0>], <__main__.RubiksState object at 0x7497c795b0>: [<__main__.RubiksState object at 0x7497c795b0>, <__main__.RubiksState object at 0x7497c795b0>], <__main__.RubiksState object at 0x7497c78b00>: [<__main__.RubiksState object at 0x7497c78b00>, <__main__.RubiksState object at 0x7497c78b00>], <__main__.RubiksState object at 0x7497c53410>: [<__main__.RubiksState object at 0x7497c53410>, <__main__.RubiksState object at 0x7497c53410>], <__main__.RubiksState object at 0x7497c5b570>: [<__main__.RubiksState object at 0x7497c5b570>, <__main__.RubiksState object at 0x7497c5b570>], <__main__.RubiksState object at 0x7497b55bf0>: [<__main__.RubiksState object at 0x7497b55bf0>, <__main__.RubiksState object at 0x7497b55bf0>], <__main__.RubiksState object at 0x7497ca9750>: [<__main__.RubiksState object at 0x7497ca9750>, <__main__.RubiksState object at 0x7497ca9750>], <__main__.RubiksState object at 0x7497ca9a50>: [<__main__.RubiksState object at 0x7497ca9a50>, <__main__.RubiksState object at 0x7497ca9a50>], <__main__.RubiksState object at 0x7497c47200>: [<__main__.RubiksState object at 0x7497c47200>, <__main__.RubiksState object at 0x7497c47200>], <__main__.RubiksState object at 0x7497c47890>: [<__main__.RubiksState object at 0x7497c47890>, <__main__.RubiksState object at 0x7497c47890>], <__main__.RubiksState object at 0x7497c8bcb0>: [<__main__.RubiksState object at 0x7497c8bcb0>, <__main__.RubiksState object at 0x7497c8bcb0>]}
+deque([<__main__.RubiksState object at 0x792eb9a350>, <__main__.RubiksState object at 0x792eb9a490>, <__main__.RubiksState object at 0x792eba15b0>, <__main__.RubiksState object at 0x792eba0b00>, <__main__.RubiksState object at 0x792eb7b410>, <__main__.RubiksState object at 0x792eb83570>, <__main__.RubiksState object at 0x792ea7dbf0>, <__main__.RubiksState object at 0x792ebd1750>, <__main__.RubiksState object at 0x792ebd1a50>, <__main__.RubiksState object at 0x792eb6f200>, <__main__.RubiksState object at 0x792eb6f890>, <__main__.RubiksState object at 0x792ebb3cb0>])
+Liszt: [(1, 1), (2, 2), (4, 4), (8, 8), (16, 16), (32, 32), (64, 64), (128, 128), (256, 256), (512, 512), (1024, 1024), (2048, 2048), (4096, 4096), (8192, 8192), (16384, 16384), (32768, 32768), (65536, 65536), (131072, 131072), (262144, 262144)]
+{1: [1, 1], 2: [2, 2], 4: [4, 4], 8: [8, 8], 16: [16, 16], 32: [32, 32], 64: [64, 64], 128: [128, 128], 256: [256, 256], 512: [512, 512], 1024: [1024, 1024], 2048: [2048, 2048], 4096: [4096, 4096], 8192: [8192, 8192], 16384: [16384, 16384], 32768: [32768, 32768], 65536: [65536, 65536], 131072: [131072, 131072], 262144: [262144, 262144]}
 
 [Program finished]
 
@@ -468,7 +467,7 @@ def Charles():
     	if choice != None:
  	   	States.append(choice)
     print(States)
-    liszt = [(x, y) for x, y in zip(States, States)]
+    liszt = [(x, y) for x, y in zip(L, L)]
     print("Liszt: {}".format(liszt))
     graph = GraphAdjList()
     graph.initialize(L, liszt)
