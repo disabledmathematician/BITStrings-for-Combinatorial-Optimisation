@@ -25,24 +25,27 @@ import sys
 0b1000000000000000000
 [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144]
 1
-Modulo n to the x, 1
-Modulo n to the x, 2
-Modulo n to the x, 3
-Modulo n to the x, 4
-Modulo n to the x, 5
-Modulo n to the x, 6
-Modulo n to the x, 7
-Modulo n to the x, 8
-Modulo n to the x, 9
-Modulo n to the x, 10
-Modulo n to the x, 11
-Modulo n to the x, 12
-Modulo n to the x, 13
-Modulo n to the x, 14
-Modulo n to the x, 18
+1
+<__main__.RubiksState object at 0x74c6805e50>
+4
+<__main__.RubiksState object at 0x74c6805e50>
+<__main__.RubiksState object at 0x74c6811350>
+32
+<__main__.RubiksState object at 0x74c6811350>
+<__main__.RubiksState object at 0x74c67e71d0>
+256
+<__main__.RubiksState object at 0x74c67ef020>
+<__main__.RubiksState object at 0x74c67ef020>
+2048
+<__main__.RubiksState object at 0x74c6841550>
+<__main__.RubiksState object at 0x74c6841550>
+16384
+<__main__.RubiksState object at 0x74c67dac60>
+<__main__.RubiksState object at 0x74c67dac60>
+131072
+<__main__.RubiksState object at 0x74c681f850>
 
 [Program finished]
-
 """
 
 class RubiksState(object):
