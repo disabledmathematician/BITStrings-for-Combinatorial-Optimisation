@@ -3,6 +3,48 @@
 from queue import deque
 import sys
 
+"""
+0b1
+0b10
+0b100
+0b1000
+0b10000
+0b100000
+0b1000000
+0b10000000
+0b100000000
+0b1000000000
+0b10000000000
+0b100000000000
+0b1000000000000
+0b10000000000000
+0b100000000000000
+0b1000000000000000
+0b10000000000000000
+0b100000000000000000
+0b1000000000000000000
+[1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144]
+1
+Modulo n to the x, 1
+Modulo n to the x, 2
+Modulo n to the x, 3
+Modulo n to the x, 4
+Modulo n to the x, 5
+Modulo n to the x, 6
+Modulo n to the x, 7
+Modulo n to the x, 8
+Modulo n to the x, 9
+Modulo n to the x, 10
+Modulo n to the x, 11
+Modulo n to the x, 12
+Modulo n to the x, 13
+Modulo n to the x, 14
+Modulo n to the x, 18
+
+[Program finished]
+
+"""
+
 class RubiksState(object):
     def __init__(self, tlf, blf, trf, brf, tlb, blb, trb, brb, moves):
         self.tlf = tlf
@@ -277,11 +319,7 @@ class RubiksState(object):
         else:
             return False
 
-def Charles():
-    States = deque([])
-#    n = RubiksState(['O', 'B', 'Y'], ['R', 'B', 'Y', ], ['O', 'G', 'Y'], ['R', 'G', 'Y'], ['O', 'B', 'W'], ['R', 'B', 'W'], ['O', 'G', 'W'], ['R', 'G', 'W'], [])
-    all_states = [n for n in itertools.permutations([['G', 'G', 'G', 'G'], ['B', 'B', 'B', 'B'], ['O', 'O', 'O', 'O'], ['R', 'R', 'R', 'R'], ['W', 'W', 'W', 'W'], ['Y', 'Y', 'Y', 'Y']])]
-    n = RubiksState(["W", "O", "G"], ["G", "W", "R"],  ["R", "Y", "G"], ["Y", "B", "R"], ["R", "W", "B"], ["Y", "G", "O"], ["W", "B", "O"], ["Y", "B", "O"], [])
+
 def Power():
 	n = 2
 	for x in range(0, 18 + 1):
@@ -372,19 +410,26 @@ def Choose(bs):
 		print("1")
 		pass
 	return bs
-L = []
-for e in Power():
-	L.append(e)
-print(L)
-all_L = []
-for bs in L:
-	Choose(bs)
-for n in range(0, 3):
-	all_L.append(list(Choose(bs) for bs in L))
-print(all_L)
-for n in count():
-	print(bin(n))
-print(all_L.pop())
+	
+def Charles():
+    States = deque([])
+#    n = RubiksState(['O', 'B', 'Y'], ['R', 'B', 'Y', ], ['O', 'G', 'Y'], ['R', 'G', 'Y'], ['O', 'B', 'W'], ['R', 'B', 'W'], ['O', 'G', 'W'], ['R', 'G', 'W'], [])
+    n = RubiksState(["W", "O", "G"], ["G", "W", "R"],  ["R", "Y", "G"], ["Y", "B", "R"], ["R", "W", "B"], ["Y", "G", "O"], ["W", "B", "O"], ["Y", "B", "O"], [])
+    L = []
+    for e in Power():
+    	L.append(e)
+    print(L)
+    for bs in L:
+    	Choose(bs)
+#all_L = []
+#for bs in L:
+#	Choose(bs)
+#for n in range(0, 3):
+#	all_L.append(list(Choose(bs) for bs in L))
+#print(all_L)
+#for n in count():
+#	print(bin(n))
+#print(all_L.pop())
 #for n in range(len(all_L)):
 #	print(all_L[n])
 	
@@ -401,3 +446,5 @@ print(all_L.pop())
 #	print(c1)
 #	c2 = 0
 #	c1 += 1
+
+Charles()
