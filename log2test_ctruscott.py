@@ -89,7 +89,75 @@ Modulo n to the x, 16
 Caught it
 Modulo n to the x, 17
 Modulo n to the x, 18
-[[1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144]]
+Modulo n to the x, 1
+Caught it
+Modulo n to the x, 2
+Caught it
+Modulo n to the x, 3
+Caught it
+Modulo n to the x, 4
+Caught it
+Modulo n to the x, 5
+Caught it
+Modulo n to the x, 6
+Caught it
+Modulo n to the x, 7
+Caught it
+Modulo n to the x, 8
+Caught it
+Modulo n to the x, 9
+Caught it
+Modulo n to the x, 10
+Caught it
+Modulo n to the x, 11
+Caught it
+Modulo n to the x, 12
+Caught it
+Modulo n to the x, 13
+Caught it
+Modulo n to the x, 14
+Caught it
+Modulo n to the x, 15
+Caught it
+Modulo n to the x, 16
+Caught it
+Modulo n to the x, 17
+Modulo n to the x, 18
+Modulo n to the x, 1
+Caught it
+Modulo n to the x, 2
+Caught it
+Modulo n to the x, 3
+Caught it
+Modulo n to the x, 4
+Caught it
+Modulo n to the x, 5
+Caught it
+Modulo n to the x, 6
+Caught it
+Modulo n to the x, 7
+Caught it
+Modulo n to the x, 8
+Caught it
+Modulo n to the x, 9
+Caught it
+Modulo n to the x, 10
+Caught it
+Modulo n to the x, 11
+Caught it
+Modulo n to the x, 12
+Caught it
+Modulo n to the x, 13
+Caught it
+Modulo n to the x, 14
+Caught it
+Modulo n to the x, 15
+Caught it
+Modulo n to the x, 16
+Caught it
+Modulo n to the x, 17
+Modulo n to the x, 18
+[[1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144], [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144], [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144]]
 
 [Program finished]
 """ 
