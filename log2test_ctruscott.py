@@ -302,87 +302,71 @@ def Choose(bs):
 		pass
 	elif (bs % 2 ** 17) == 0:
 		#B2
-		print("Modulo n to the x, 17")
 		pass
+#		print("Modulo n to the x, 17")
 	elif (bs % 2 ** 16) == 0:
 		#B
-		print("Modulo n to the x, 16")
-		print("Caught it")
+#		print("Modulo n to the x, 16")
 		pass
 	elif (bs % 2 ** 15) == 0:
 		#Finv
-		print("Modulo n to the x, 15")
-		print("Caught it")
+#		print("Modulo n to the x, 15")
 		pass
 	elif (bs % 2 ** 14) == 0:
 		#F2
 		print("Modulo n to the x, 14")
-		print("Caught it")
 		pass
 	elif (bs % 2 ** 13) == 0:
 		#F
 		print("Modulo n to the x, 13")
-		print("Caught it")
 		pass
 	elif (bs % 2 ** 12) == 0:
 		#Dinv
 		print("Modulo n to the x, 12")
-		print("Caught it")
 		pass
 	elif (bs % 2 ** 11) == 0:
 		#D2
 		print("Modulo n to the x, 11")
-		print("Caught it")
 		pass
 	elif (bs % 2 ** 10) == 0:
 		#D
 		print("Modulo n to the x, 10")
-		print("Caught it")
 		pass
 	elif (bs % 2 ** 9) == 0:
 		#Uinv
 		print("Modulo n to the x, 9")
-		print("Caught it")
 		pass
 	elif (bs % 2 ** 8) == 0:
 		#U2
 		print("Modulo n to the x, 8")
-		print("Caught it")
 		pass
 	elif (bs % 2 ** 7) == 0:
 		#U
 		print("Modulo n to the x, 7")
-		print("Caught it")
 		pass
 	elif (bs % 2 ** 6) == 0:
 		#Rinv
 		print("Modulo n to the x, 6")
-		print("Caught it")
 		pass
 	elif (bs % 2 ** 5) == 0:
 		#R2
 		print("Modulo n to the x, 5")
-		print("Caught it")
 		pass
 	elif (bs % 2 ** 4) == 0:
 		#R
 		print("Modulo n to the x, 4")
-		print("Caught it")
 		pass
 	elif (bs % 2 ** 3) == 0:
 		#Linv
 		print("Modulo n to the x, 3")
-		print("Caught it")
 		pass
 	elif (bs % 2 ** 2) == 0:
 		#L2
 		print("Modulo n to the x, 2")
-		print("Caught it")
 		pass
 	elif (bs % 2 ** 1) == 0:
 		#L
 		print("Modulo n to the x, 1")
-		print("Caught it")
 		pass
 	else:
 		print("1")
