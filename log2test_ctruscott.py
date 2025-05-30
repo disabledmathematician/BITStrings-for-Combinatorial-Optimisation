@@ -2,52 +2,6 @@
 # I love you Dad Mark William Watters
 from queue import deque
 import sys
-
-"""
-0b1
-0b10
-0b100
-0b1000
-0b10000
-0b100000
-0b1000000
-0b10000000
-0b100000000
-0b1000000000
-0b10000000000
-0b100000000000
-0b1000000000000
-0b10000000000000
-0b100000000000000
-0b1000000000000000
-0b10000000000000000
-0b100000000000000000
-0b1000000000000000000
-[1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144]
-1
-1
-<__main__.RubiksState object at 0x74c6805e50>
-4
-<__main__.RubiksState object at 0x74c6805e50>
-<__main__.RubiksState object at 0x74c6811350>
-32
-<__main__.RubiksState object at 0x74c6811350>
-<__main__.RubiksState object at 0x74c67e71d0>
-256
-<__main__.RubiksState object at 0x74c67ef020>
-<__main__.RubiksState object at 0x74c67ef020>
-2048
-<__main__.RubiksState object at 0x74c6841550>
-<__main__.RubiksState object at 0x74c6841550>
-16384
-<__main__.RubiksState object at 0x74c67dac60>
-<__main__.RubiksState object at 0x74c67dac60>
-131072
-<__main__.RubiksState object at 0x74c681f850>
-
-[Program finished]
-"""
-
 """
 0b1
 0b10
@@ -71,39 +25,12 @@ import sys
 [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144]
 ['L']
 ['L inverse']
-[None, <__main__.RubiksState object at 0x7c89735e50>, None, <__main__.RubiksState object at 0x7c89735f90>, <__main__.RubiksState object at 0x7c89741350>, None, <__main__.RubiksState object at 0x7c897408a0>, <__main__.RubiksState object at 0x7c897171d0>, None, <__main__.RubiksState object at 0x7c8971f020>, <__main__.RubiksState object at 0x7c896256a0>, None, <__main__.RubiksState object at 0x7c89771550>, <__main__.RubiksState object at 0x7c89771850>, None, <__main__.RubiksState object at 0x7c8970ac60>, <__main__.RubiksState object at 0x7c8970b4d0>, None, <__main__.RubiksState object at 0x7c8974f850>]
+[<__main__.RubiksState object at 0x7aa3ac1e50>, <__main__.RubiksState object at 0x7aa3ac1f90>, <__main__.RubiksState object at 0x7aa3acd350>, <__main__.RubiksState object at 0x7aa3acc8a0>, <__main__.RubiksState object at 0x7aa3aa31d0>, <__main__.RubiksState object at 0x7aa3aab020>, <__main__.RubiksState object at 0x7aa39b56a0>, <__main__.RubiksState object at 0x7aa3afd550>, <__main__.RubiksState object at 0x7aa3afd850>, <__main__.RubiksState object at 0x7aa3a97200>, <__main__.RubiksState object at 0x7aa3a96c60>, <__main__.RubiksState object at 0x7aa3adb850>]
 
 [Program finished]
 
 """
-
-"""
-0b1
-0b10
-0b100
-0b1000
-0b10000
-0b100000
-0b1000000
-0b10000000
-0b100000000
-0b1000000000
-0b10000000000
-0b100000000000
-0b1000000000000
-0b10000000000000
-0b100000000000000
-0b1000000000000000
-0b10000000000000000
-0b100000000000000000
-0b1000000000000000000
-[1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144]
-['L']
-['L inverse']
-
-[Program finished]
-
-""" Proof of Concept
+# Proof of Concept 
 
 class RubiksState(object):
     def __init__(self, tlf, blf, trf, brf, tlb, blb, trb, brb, moves):
@@ -483,8 +410,10 @@ def Charles():
     	L.append(e)
     print(L)
     for const in L:
-    	States.append(Choose(const, rs))
-    		
+    	choice = Choose(const, rs)
+    	if choice != None:
+ 	   	States.append(choice)
+    print(States)
 #    for bs in L:
 #    	print(Choose(bs, rs))
 #    	c = Choose(bs, rs)
