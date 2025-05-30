@@ -182,5 +182,6 @@ print(L)
 all_L = []
 for bs in L:
 	Choose(bs)
-all_L.append(list(Choose(bs) for bs in L))
+for n in range(0, 3):
+	all_L.append(list(Choose(bs) for bs in L))
 print(all_L)
