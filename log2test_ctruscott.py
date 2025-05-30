@@ -1,11 +1,103 @@
 # Charles Truscott Watters
 # I love you Dad Mark William Watters
+from __future__ import annotations
 from queue import deque
 import sys
-"""
-Truscott-Watters algorithm for solving the 2 x 2 Rubik's cube in polynomial or less time
+
 
 """
+0b1
+0b10
+0b100
+0b1000
+0b10000
+0b100000
+0b1000000
+0b10000000
+0b100000000
+0b1000000000
+0b10000000000
+0b100000000000
+0b1000000000000
+0b10000000000000
+0b100000000000000
+0b1000000000000000
+0b10000000000000000
+0b100000000000000000
+0b1000000000000000000
+[1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144]
+['L']
+['L inverse']
+deque([<__main__.RubiksState object at 0x77d4f7e350>, <__main__.RubiksState object at 0x77d4f7e490>, <__main__.RubiksState object at 0x77d4f855b0>, <__main__.RubiksState object at 0x77d4f84b00>, <__main__.RubiksState object at 0x77d4f5f410>, <__main__.RubiksState object at 0x77d4f67570>, <__main__.RubiksState object at 0x77d4e65bf0>, <__main__.RubiksState object at 0x77d4fb5750>, <__main__.RubiksState object at 0x77d4fb5a50>, <__main__.RubiksState object at 0x77d4f53200>, <__main__.RubiksState object at 0x77d4f53890>, <__main__.RubiksState object at 0x77d4f97cb0>])
+{<__main__.RubiksState object at 0x77d4f7e350>: [<__main__.RubiksState object at 0x77d4f7e350>, <__main__.RubiksState object at 0x77d4f7e350>, <__main__.RubiksState object at 0x77d4f7e490>, <__main__.RubiksState object at 0x77d4f855b0>, <__main__.RubiksState object at 0x77d4f84b00>, <__main__.RubiksState object at 0x77d4f5f410>, <__main__.RubiksState object at 0x77d4f67570>, <__main__.RubiksState object at 0x77d4e65bf0>, <__main__.RubiksState object at 0x77d4fb5750>, <__main__.RubiksState object at 0x77d4fb5a50>, <__main__.RubiksState object at 0x77d4f53200>, <__main__.RubiksState object at 0x77d4f53890>, <__main__.RubiksState object at 0x77d4f97cb0>, <__main__.RubiksState object at 0x77d4f7e490>, <__main__.RubiksState object at 0x77d4f855b0>, <__main__.RubiksState object at 0x77d4f84b00>, <__main__.RubiksState object at 0x77d4f5f410>, <__main__.RubiksState object at 0x77d4f67570>, <__main__.RubiksState object at 0x77d4e65bf0>, <__main__.RubiksState object at 0x77d4fb5750>, <__main__.RubiksState object at 0x77d4fb5a50>, <__main__.RubiksState object at 0x77d4f53200>, <__main__.RubiksState object at 0x77d4f53890>, <__main__.RubiksState object at 0x77d4f97cb0>], <__main__.RubiksState object at 0x77d4f7e490>: [<__main__.RubiksState object at 0x77d4f7e350>, <__main__.RubiksState object at 0x77d4f7e350>, <__main__.RubiksState object at 0x77d4f7e490>, <__main__.RubiksState object at 0x77d4f7e490>, <__main__.RubiksState object at 0x77d4f855b0>, <__main__.RubiksState object at 0x77d4f84b00>, <__main__.RubiksState object at 0x77d4f5f410>, <__main__.RubiksState object at 0x77d4f67570>, <__main__.RubiksState object at 0x77d4e65bf0>, <__main__.RubiksState object at 0x77d4fb5750>, <__main__.RubiksState object at 0x77d4fb5a50>, <__main__.RubiksState object at 0x77d4f53200>, <__main__.RubiksState object at 0x77d4f53890>, <__main__.RubiksState object at 0x77d4f97cb0>, <__main__.RubiksState object at 0x77d4f855b0>, <__main__.RubiksState object at 0x77d4f84b00>, <__main__.RubiksState object at 0x77d4f5f410>, <__main__.RubiksState object at 0x77d4f67570>, <__main__.RubiksState object at 0x77d4e65bf0>, <__main__.RubiksState object at 0x77d4fb5750>, <__main__.RubiksState object at 0x77d4fb5a50>, <__main__.RubiksState object at 0x77d4f53200>, <__main__.RubiksState object at 0x77d4f53890>, <__main__.RubiksState object at 0x77d4f97cb0>], <__main__.RubiksState object at 0x77d4f855b0>: [<__main__.RubiksState object at 0x77d4f7e350>, <__main__.RubiksState object at 0x77d4f7e490>, <__main__.RubiksState object at 0x77d4f7e350>, <__main__.RubiksState object at 0x77d4f7e490>, <__main__.RubiksState object at 0x77d4f855b0>, <__main__.RubiksState object at 0x77d4f855b0>, <__main__.RubiksState object at 0x77d4f84b00>, <__main__.RubiksState object at 0x77d4f5f410>, <__main__.RubiksState object at 0x77d4f67570>, <__main__.RubiksState object at 0x77d4e65bf0>, <__main__.RubiksState object at 0x77d4fb5750>, <__main__.RubiksState object at 0x77d4fb5a50>, <__main__.RubiksState object at 0x77d4f53200>, <__main__.RubiksState object at 0x77d4f53890>, <__main__.RubiksState object at 0x77d4f97cb0>, <__main__.RubiksState object at 0x77d4f84b00>, <__main__.RubiksState object at 0x77d4f5f410>, <__main__.RubiksState object at 0x77d4f67570>, <__main__.RubiksState object at 0x77d4e65bf0>, <__main__.RubiksState object at 0x77d4fb5750>, <__main__.RubiksState object at 0x77d4fb5a50>, <__main__.RubiksState object at 0x77d4f53200>, <__main__.RubiksState object at 0x77d4f53890>, <__main__.RubiksState object at 0x77d4f97cb0>], <__main__.RubiksState object at 0x77d4f84b00>: [<__main__.RubiksState object at 0x77d4f7e350>, <__main__.RubiksState object at 0x77d4f7e490>, <__main__.RubiksState object at 0x77d4f855b0>, <__main__.RubiksState object at 0x77d4f7e350>, <__main__.RubiksState object at 0x77d4f7e490>, <__main__.RubiksState object at 0x77d4f855b0>, <__main__.RubiksState object at 0x77d4f84b00>, <__main__.RubiksState object at 0x77d4f84b00>, <__main__.RubiksState object at 0x77d4f5f410>, <__main__.RubiksState object at 0x77d4f67570>, <__main__.RubiksState object at 0x77d4e65bf0>, <__main__.RubiksState object at 0x77d4fb5750>, <__main__.RubiksState object at 0x77d4fb5a50>, <__main__.RubiksState object at 0x77d4f53200>, <__main__.RubiksState object at 0x77d4f53890>, <__main__.RubiksState object at 0x77d4f97cb0>, <__main__.RubiksState object at 0x77d4f5f410>, <__main__.RubiksState object at 0x77d4f67570>, <__main__.RubiksState object at 0x77d4e65bf0>, <__main__.RubiksState object at 0x77d4fb5750>, <__main__.RubiksState object at 0x77d4fb5a50>, <__main__.RubiksState object at 0x77d4f53200>, <__main__.RubiksState object at 0x77d4f53890>, <__main__.RubiksState object at 0x77d4f97cb0>], <__main__.RubiksState object at 0x77d4f5f410>: [<__main__.RubiksState object at 0x77d4f7e350>, <__main__.RubiksState object at 0x77d4f7e490>, <__main__.RubiksState object at 0x77d4f855b0>, <__main__.RubiksState object at 0x77d4f84b00>, <__main__.RubiksState object at 0x77d4f7e350>, <__main__.RubiksState object at 0x77d4f7e490>, <__main__.RubiksState object at 0x77d4f855b0>, <__main__.RubiksState object at 0x77d4f84b00>, <__main__.RubiksState object at 0x77d4f5f410>, <__main__.RubiksState object at 0x77d4f5f410>, <__main__.RubiksState object at 0x77d4f67570>, <__main__.RubiksState object at 0x77d4e65bf0>, <__main__.RubiksState object at 0x77d4fb5750>, <__main__.RubiksState object at 0x77d4fb5a50>, <__main__.RubiksState object at 0x77d4f53200>, <__main__.RubiksState object at 0x77d4f53890>, <__main__.RubiksState object at 0x77d4f97cb0>, <__main__.RubiksState object at 0x77d4f67570>, <__main__.RubiksState object at 0x77d4e65bf0>, <__main__.RubiksState object at 0x77d4fb5750>, <__main__.RubiksState object at 0x77d4fb5a50>, <__main__.RubiksState object at 0x77d4f53200>, <__main__.RubiksState object at 0x77d4f53890>, <__main__.RubiksState object at 0x77d4f97cb0>], <__main__.RubiksState object at 0x77d4f67570>: [<__main__.RubiksState object at 0x77d4f7e350>, <__main__.RubiksState object at 0x77d4f7e490>, <__main__.RubiksState object at 0x77d4f855b0>, <__main__.RubiksState object at 0x77d4f84b00>, <__main__.RubiksState object at 0x77d4f5f410>, <__main__.RubiksState object at 0x77d4f7e350>, <__main__.RubiksState object at 0x77d4f7e490>, <__main__.RubiksState object at 0x77d4f855b0>, <__main__.RubiksState object at 0x77d4f84b00>, <__main__.RubiksState object at 0x77d4f5f410>, <__main__.RubiksState object at 0x77d4f67570>, <__main__.RubiksState object at 0x77d4f67570>, <__main__.RubiksState object at 0x77d4e65bf0>, <__main__.RubiksState object at 0x77d4fb5750>, <__main__.RubiksState object at 0x77d4fb5a50>, <__main__.RubiksState object at 0x77d4f53200>, <__main__.RubiksState object at 0x77d4f53890>, <__main__.RubiksState object at 0x77d4f97cb0>, <__main__.RubiksState object at 0x77d4e65bf0>, <__main__.RubiksState object at 0x77d4fb5750>, <__main__.RubiksState object at 0x77d4fb5a50>, <__main__.RubiksState object at 0x77d4f53200>, <__main__.RubiksState object at 0x77d4f53890>, <__main__.RubiksState object at 0x77d4f97cb0>], <__main__.RubiksState object at 0x77d4e65bf0>: [<__main__.RubiksState object at 0x77d4f7e350>, <__main__.RubiksState object at 0x77d4f7e490>, <__main__.RubiksState object at 0x77d4f855b0>, <__main__.RubiksState object at 0x77d4f84b00>, <__main__.RubiksState object at 0x77d4f5f410>, <__main__.RubiksState object at 0x77d4f67570>, <__main__.RubiksState object at 0x77d4f7e350>, <__main__.RubiksState object at 0x77d4f7e490>, <__main__.RubiksState object at 0x77d4f855b0>, <__main__.RubiksState object at 0x77d4f84b00>, <__main__.RubiksState object at 0x77d4f5f410>, <__main__.RubiksState object at 0x77d4f67570>, <__main__.RubiksState object at 0x77d4e65bf0>, <__main__.RubiksState object at 0x77d4e65bf0>, <__main__.RubiksState object at 0x77d4fb5750>, <__main__.RubiksState object at 0x77d4fb5a50>, <__main__.RubiksState object at 0x77d4f53200>, <__main__.RubiksState object at 0x77d4f53890>, <__main__.RubiksState object at 0x77d4f97cb0>, <__main__.RubiksState object at 0x77d4fb5750>, <__main__.RubiksState object at 0x77d4fb5a50>, <__main__.RubiksState object at 0x77d4f53200>, <__main__.RubiksState object at 0x77d4f53890>, <__main__.RubiksState object at 0x77d4f97cb0>], <__main__.RubiksState object at 0x77d4fb5750>: [<__main__.RubiksState object at 0x77d4f7e350>, <__main__.RubiksState object at 0x77d4f7e490>, <__main__.RubiksState object at 0x77d4f855b0>, <__main__.RubiksState object at 0x77d4f84b00>, <__main__.RubiksState object at 0x77d4f5f410>, <__main__.RubiksState object at 0x77d4f67570>, <__main__.RubiksState object at 0x77d4e65bf0>, <__main__.RubiksState object at 0x77d4f7e350>, <__main__.RubiksState object at 0x77d4f7e490>, <__main__.RubiksState object at 0x77d4f855b0>, <__main__.RubiksState object at 0x77d4f84b00>, <__main__.RubiksState object at 0x77d4f5f410>, <__main__.RubiksState object at 0x77d4f67570>, <__main__.RubiksState object at 0x77d4e65bf0>, <__main__.RubiksState object at 0x77d4fb5750>, <__main__.RubiksState object at 0x77d4fb5750>, <__main__.RubiksState object at 0x77d4fb5a50>, <__main__.RubiksState object at 0x77d4f53200>, <__main__.RubiksState object at 0x77d4f53890>, <__main__.RubiksState object at 0x77d4f97cb0>, <__main__.RubiksState object at 0x77d4fb5a50>, <__main__.RubiksState object at 0x77d4f53200>, <__main__.RubiksState object at 0x77d4f53890>, <__main__.RubiksState object at 0x77d4f97cb0>], <__main__.RubiksState object at 0x77d4fb5a50>: [<__main__.RubiksState object at 0x77d4f7e350>, <__main__.RubiksState object at 0x77d4f7e490>, <__main__.RubiksState object at 0x77d4f855b0>, <__main__.RubiksState object at 0x77d4f84b00>, <__main__.RubiksState object at 0x77d4f5f410>, <__main__.RubiksState object at 0x77d4f67570>, <__main__.RubiksState object at 0x77d4e65bf0>, <__main__.RubiksState object at 0x77d4fb5750>, <__main__.RubiksState object at 0x77d4f7e350>, <__main__.RubiksState object at 0x77d4f7e490>, <__main__.RubiksState object at 0x77d4f855b0>, <__main__.RubiksState object at 0x77d4f84b00>, <__main__.RubiksState object at 0x77d4f5f410>, <__main__.RubiksState object at 0x77d4f67570>, <__main__.RubiksState object at 0x77d4e65bf0>, <__main__.RubiksState object at 0x77d4fb5750>, <__main__.RubiksState object at 0x77d4fb5a50>, <__main__.RubiksState object at 0x77d4fb5a50>, <__main__.RubiksState object at 0x77d4f53200>, <__main__.RubiksState object at 0x77d4f53890>, <__main__.RubiksState object at 0x77d4f97cb0>, <__main__.RubiksState object at 0x77d4f53200>, <__main__.RubiksState object at 0x77d4f53890>, <__main__.RubiksState object at 0x77d4f97cb0>], <__main__.RubiksState object at 0x77d4f53200>: [<__main__.RubiksState object at 0x77d4f7e350>, <__main__.RubiksState object at 0x77d4f7e490>, <__main__.RubiksState object at 0x77d4f855b0>, <__main__.RubiksState object at 0x77d4f84b00>, <__main__.RubiksState object at 0x77d4f5f410>, <__main__.RubiksState object at 0x77d4f67570>, <__main__.RubiksState object at 0x77d4e65bf0>, <__main__.RubiksState object at 0x77d4fb5750>, <__main__.RubiksState object at 0x77d4fb5a50>, <__main__.RubiksState object at 0x77d4f7e350>, <__main__.RubiksState object at 0x77d4f7e490>, <__main__.RubiksState object at 0x77d4f855b0>, <__main__.RubiksState object at 0x77d4f84b00>, <__main__.RubiksState object at 0x77d4f5f410>, <__main__.RubiksState object at 0x77d4f67570>, <__main__.RubiksState object at 0x77d4e65bf0>, <__main__.RubiksState object at 0x77d4fb5750>, <__main__.RubiksState object at 0x77d4fb5a50>, <__main__.RubiksState object at 0x77d4f53200>, <__main__.RubiksState object at 0x77d4f53200>, <__main__.RubiksState object at 0x77d4f53890>, <__main__.RubiksState object at 0x77d4f97cb0>, <__main__.RubiksState object at 0x77d4f53890>, <__main__.RubiksState object at 0x77d4f97cb0>], <__main__.RubiksState object at 0x77d4f53890>: [<__main__.RubiksState object at 0x77d4f7e350>, <__main__.RubiksState object at 0x77d4f7e490>, <__main__.RubiksState object at 0x77d4f855b0>, <__main__.RubiksState object at 0x77d4f84b00>, <__main__.RubiksState object at 0x77d4f5f410>, <__main__.RubiksState object at 0x77d4f67570>, <__main__.RubiksState object at 0x77d4e65bf0>, <__main__.RubiksState object at 0x77d4fb5750>, <__main__.RubiksState object at 0x77d4fb5a50>, <__main__.RubiksState object at 0x77d4f53200>, <__main__.RubiksState object at 0x77d4f7e350>, <__main__.RubiksState object at 0x77d4f7e490>, <__main__.RubiksState object at 0x77d4f855b0>, <__main__.RubiksState object at 0x77d4f84b00>, <__main__.RubiksState object at 0x77d4f5f410>, <__main__.RubiksState object at 0x77d4f67570>, <__main__.RubiksState object at 0x77d4e65bf0>, <__main__.RubiksState object at 0x77d4fb5750>, <__main__.RubiksState object at 0x77d4fb5a50>, <__main__.RubiksState object at 0x77d4f53200>, <__main__.RubiksState object at 0x77d4f53890>, <__main__.RubiksState object at 0x77d4f53890>, <__main__.RubiksState object at 0x77d4f97cb0>, <__main__.RubiksState object at 0x77d4f97cb0>], <__main__.RubiksState object at 0x77d4f97cb0>: [<__main__.RubiksState object at 0x77d4f7e350>, <__main__.RubiksState object at 0x77d4f7e490>, <__main__.RubiksState object at 0x77d4f855b0>, <__main__.RubiksState object at 0x77d4f84b00>, <__main__.RubiksState object at 0x77d4f5f410>, <__main__.RubiksState object at 0x77d4f67570>, <__main__.RubiksState object at 0x77d4e65bf0>, <__main__.RubiksState object at 0x77d4fb5750>, <__main__.RubiksState object at 0x77d4fb5a50>, <__main__.RubiksState object at 0x77d4f53200>, <__main__.RubiksState object at 0x77d4f53890>, <__main__.RubiksState object at 0x77d4f7e350>, <__main__.RubiksState object at 0x77d4f7e490>, <__main__.RubiksState object at 0x77d4f855b0>, <__main__.RubiksState object at 0x77d4f84b00>, <__main__.RubiksState object at 0x77d4f5f410>, <__main__.RubiksState object at 0x77d4f67570>, <__main__.RubiksState object at 0x77d4e65bf0>, <__main__.RubiksState object at 0x77d4fb5750>, <__main__.RubiksState object at 0x77d4fb5a50>, <__main__.RubiksState object at 0x77d4f53200>, <__main__.RubiksState object at 0x77d4f53890>, <__main__.RubiksState object at 0x77d4f97cb0>, <__main__.RubiksState object at 0x77d4f97cb0>]}
+['L'] False
+['L inverse'] False
+['R'] False
+['R inverse'] False
+['U'] False
+['U inverse'] False
+['D'] False
+['D inverse'] False
+['F'] False
+['F inverse'] False
+['B'] False
+['B inverse'] False
+
+[Program finished]
+
+"""
+
+
+class GraphAdjList:
+    def __init__(self) -> None:
+        self.adj_list: dict[any,list[any]] = {}  # Hash table of vertex to array of vertices
+
+    def add_vertex(self, u: any) -> None:
+        if u not in self.adj_list:
+            self.adj_list[u] = []
+
+    def delete_vertex(self, u: any) -> None:
+        if u not in self.adj_list:
+            return
+        del self.adj_list[u]
+        v: any
+        for v in self.adj_list:
+            u: any
+            if u in self.adj_list[v]:
+                self.adj_list[v].remove(u)
+
+    def add_edge(self, u: any, v: any) -> None:
+        if u not in self.adj_list:
+            self.add_vertex(u)
+        if v not in self.adj_list:
+            self.add_vertex(v)
+        self.adj_list[u].append(v)
+        self.adj_list[v].append(u)
+
+    def remove_edge(self, u: any, v: any) -> None:
+        if u in self.adj_list and v in self.adj_list[u] and v in self.adj_list and u in self.adj_list[v]:
+            self.adj_list[u].remove(v)
+            self.adj_list[v].remove(u)
+
+    def edge_exists(self, u: any, v: any) -> bool:
+        return u in self.adj_list and v in self.adj_list[u]
+
+    def get_vertices(self) -> list[any]:
+        return list(self.adj_list.keys())
+
+    def get_neighbors(self, u: any) -> list[any]:
+        if u not in self.adj_list:
+            return []
+        return self.adj_list[u]
+
+    def initialize(self, vertices: list[any], edges: list[tuple[any,any]]) -> None:
+        u: any
+        for u in vertices:
+            self.add_vertex(u)
+        src: any; dest: any
+        for src, dest in edges:
+            self.add_edge(src, dest)
+            
 class RubiksState(object):
     def __init__(self, tlf, blf, trf, brf, tlb, blb, trb, brb, moves):
         self.tlf = tlf
@@ -378,7 +470,8 @@ def Choose(bs: int, rs: RubiksState) -> RubiksState:
 def Charles():
     States = deque([])
 #    n = RubiksState(['O', 'B', 'Y'], ['R', 'B', 'Y', ], ['O', 'G', 'Y'], ['R', 'G', 'Y'], ['O', 'B', 'W'], ['R', 'B', 'W'], ['O', 'G', 'W'], ['R', 'G', 'W'], [])
-    rs = RubiksState(["W", "O", "G"], ["G", "W", "R"],  ["R", "Y", "G"], ["Y", "B", "R"], ["R", "W", "B"], ["Y", "G", "O"], ["W", "B", "O"], ["Y", "B", "O"], [])
+#    rs = RubiksState(["W", "O", "G"], ["G", "W", "R"],  ["R", "Y", "G"], ["Y", "B", "R"], ["R", "W", "B"], ["Y", "G", "O"], ["W", "B", "O"], ["Y", "B", "O"], [])
+    rs = RubiksState(["W", "O", "G"], ["Y", "O", "G"],  ["W", "R", "G"], ["Y", "R", "G"], ["W", "G", "O"], ["Y", "G", "O"], ["W", "B", "O"], ["Y", "R", "B"], [])
     L = []
     for e in Power():
     	L.append(e)
@@ -388,63 +481,51 @@ def Charles():
     	if choice != None:
  	   	States.append(choice)
     print(States)
-    for s in States:
-    	print("Moves: {}".format(s.moves))
-    	print("State: {}".format(s.orientation))
-    while States:
-    	elem = States.popleft()
-    	if elem.is_solved() == True:
-    		break
-    	else:
-    		for const in L:
-    			choice = Choose(const, elem)
-    			if choice != None:
-    				States.append(choice)
-#    for bs in L:
-#    	print(Choose(bs, rs))
-#    	c = Choose(bs, rs)
-#    	Q.append(c)
-   
-#    is_solved = False
-#    while is_solved != True:
-#    	elem = Q.popleft()
-#    	print(elem.moves)
+
+    tup = ()
+    liszt = []
+    for i in States:
+    	for j in States:
+    		tup = (i, j)
+    		liszt.append(tup)
+    graph = GraphAdjList()
+    graph.initialize(States, liszt)
+    for e in States:
+    	graph.get_neighbors(e)
+    print(graph.adj_list)
+    for i in graph.adj_list:
+    	print(i.moves, i.is_solved())
+#    print(graph.get_neighbors('A'))
+#    print(graph.edge_exists('A', 'B'))
+#    print(graph.edge_exists('A', 'E'))
+#    graph.remove_edge('A', 'B')
+#    print(graph.edge_exists('A', 'B'))
+#    graph.add_edge('A', 'B')
+#    print(graph.edge_exists('A', 'B'))
+#    graph.delete_vertex('A')
+#    print(graph.adj_list)
+
+#    L = []
+#    for e in Power():
+#    	L.append(e)
+#    print(L)
+#    for const in L:
+#    	choice = Choose(const, rs)
+#    	if choice != None:
+# 	   	States.append(choice)
+#    print(States)
+#    for s in States:
+#    	print("Moves: {}".format(s.moves))
+#    	print("State: {}".format(s.orientation))
+#    while States:
+#    	elem = States.popleft()
 #    	if elem.is_solved() == True:
-#    		is_solved = True
 #    		break
-#    while Q:
-#    	elem = Q.popleft()
-#    	for bs in L:
-#    		c = Choose(bs, elem)
-#    		Q.append(c)
-#    	if elem.is_solved() == True:
-#    		print(elem.moves, elem.orientation)
-    	
-    
-#all_L = []
-#for bs in L:
-#	Choose(bs)
-#for n in range(0, 3):
-#	all_L.append(list(Choose(bs) for bs in L))
-#print(all_L)
-#for n in count():
-#	print(bin(n))
-#print(all_L.pop())
-#for n in range(len(all_L)):
-#	print(all_L[n])
-	
-#Solution below is in polynomial time. I'm hoping to implement an optimal, logarithmic algorithm'
-#c1 = 0
-#c2 = 0
-#c3 = c1 + 1
-#while c1 < len(all_L):
-#	while c2 < len(all_L[0]):
-#		print("inner")
-#		print(c2)
-#		c2 += 1	
-#	print("outer")
-#	print(c1)
-#	c2 = 0
-#	c1 += 1
+#    	else:
+#    		for const in L:
+#    			choice = Choose(const, elem)
+#    			if choice != None:
+#    				States.append(choice)
+
 
 Charles()
