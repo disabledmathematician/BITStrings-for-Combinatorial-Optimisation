@@ -476,22 +476,14 @@ def Charles():
 #    liszt = [(x, y) for x, y in zip(L, L)]
     print("Liszt: {}".format(liszt))
     graph = GraphAdjList()
-    graph.initialize(L, [(x, y) for x, y in zip(L, L)])
+    graph.initialize(L, liszt)
     for e in States:
     	graph.get_neighbors(e)
     print(graph.adj_list)
 #    for u in graph.adj_list:
 #    	print(u.moves, u.is_solved())
 #    	print(i.moves, i.is_solved())
-#    print(graph.get_neighbors('A'))
-#    print(graph.edge_exists('A', 'B'))
-#    print(graph.edge_exists('A', 'E'))
-#    graph.remove_edge('A', 'B')
-#    print(graph.edge_exists('A', 'B'))
-#    graph.add_edge('A', 'B')
-#    print(graph.edge_exists('A', 'B'))
-#    graph.delete_vertex('A')
-#    print(graph.adj_list)
+
 
 #    L = []
 #    for e in Power():
