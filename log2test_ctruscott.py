@@ -333,78 +333,83 @@ def count():
 		yield c
 		c  <<= 1
 		
-def Choose(bs):
+def Choose(bs: int, rs: RubiksState):
 	if (bs % 2 ** 18) == 0:
 		#Binv
-		print("Modulo n to the x, 18")
+		state = rs.Binv()
+		return state
 		pass
 	elif (bs % 2 ** 17) == 0:
 		#B2
 		pass
-#		print("Modulo n to the x, 17")
 	elif (bs % 2 ** 16) == 0:
 		#B
-#		print("Modulo n to the x, 16")
+		state = rs.B()
+		return state
 		pass
 	elif (bs % 2 ** 15) == 0:
 		#Finv
-#		print("Modulo n to the x, 15")
+		state = rs.Finv()
+		return state
 		pass
 	elif (bs % 2 ** 14) == 0:
 		#F2
-		print("Modulo n to the x, 14")
 		pass
 	elif (bs % 2 ** 13) == 0:
 		#F
-		print("Modulo n to the x, 13")
+		state = rs.F()
+		return state
 		pass
 	elif (bs % 2 ** 12) == 0:
 		#Dinv
-		print("Modulo n to the x, 12")
+		state = rs.Dinv()
+		return state
 		pass
 	elif (bs % 2 ** 11) == 0:
 		#D2
-		print("Modulo n to the x, 11")
 		pass
 	elif (bs % 2 ** 10) == 0:
 		#D
-		print("Modulo n to the x, 10")
+		state = rs.D()
+		return state
 		pass
 	elif (bs % 2 ** 9) == 0:
 		#Uinv
-		print("Modulo n to the x, 9")
+		state = rs.Uinv()
+		return state
 		pass
 	elif (bs % 2 ** 8) == 0:
 		#U2
-		print("Modulo n to the x, 8")
 		pass
 	elif (bs % 2 ** 7) == 0:
 		#U
-		print("Modulo n to the x, 7")
-		pass
+		state = rs.U()
+		return state
 	elif (bs % 2 ** 6) == 0:
 		#Rinv
-		print("Modulo n to the x, 6")
+		state = rs.Rinv()
+		return state
 		pass
 	elif (bs % 2 ** 5) == 0:
 		#R2
-		print("Modulo n to the x, 5")
 		pass
 	elif (bs % 2 ** 4) == 0:
 		#R
-		print("Modulo n to the x, 4")
+		state = rs.R()
+		return state
 		pass
 	elif (bs % 2 ** 3) == 0:
 		#Linv
-		print("Modulo n to the x, 3")
+		state = rs.Linv()
+		return state
 		pass
 	elif (bs % 2 ** 2) == 0:
 		#L2
-		print("Modulo n to the x, 2")
 		pass
 	elif (bs % 2 ** 1) == 0:
 		#L
-		print("Modulo n to the x, 1")
+		state = rs.L()
+		return state
 		pass
 	else:
 		print("1")
@@ -414,13 +419,13 @@ def Choose(bs):
 def Charles():
     States = deque([])
 #    n = RubiksState(['O', 'B', 'Y'], ['R', 'B', 'Y', ], ['O', 'G', 'Y'], ['R', 'G', 'Y'], ['O', 'B', 'W'], ['R', 'B', 'W'], ['O', 'G', 'W'], ['R', 'G', 'W'], [])
-    n = RubiksState(["W", "O", "G"], ["G", "W", "R"],  ["R", "Y", "G"], ["Y", "B", "R"], ["R", "W", "B"], ["Y", "G", "O"], ["W", "B", "O"], ["Y", "B", "O"], [])
+    rs = RubiksState(["W", "O", "G"], ["G", "W", "R"],  ["R", "Y", "G"], ["Y", "B", "R"], ["R", "W", "B"], ["Y", "G", "O"], ["W", "B", "O"], ["Y", "B", "O"], [])
     L = []
     for e in Power():
     	L.append(e)
     print(L)
     for bs in L:
-    	Choose(bs)
+    	print(Choose(bs, rs))
 #all_L = []
 #for bs in L:
 #	Choose(bs)
