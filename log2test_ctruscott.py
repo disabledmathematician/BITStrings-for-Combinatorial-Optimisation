@@ -1,59 +1,11 @@
 # Charles Truscott Watters
+# I love you Dad Mark William Watters
 from queue import deque
 import sys
 """
-0b1
-0b10
-0b100
-0b1000
-0b10000
-0b100000
-0b1000000
-0b10000000
-0b100000000
-0b1000000000
-0b10000000000
-0b100000000000
-0b1000000000000
-0b10000000000000
-0b100000000000000
-0b1000000000000000
-0b10000000000000000
-0b100000000000000000
-0b1000000000000000000
-[1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144]
-['L']
-['L inverse']
-[<__main__.RubiksState object at 0x781c8ade50>, <__main__.RubiksState object at 0x781c8adf90>, <__main__.RubiksState object at 0x781c8b9350>, <__main__.RubiksState object at 0x781c8b88a0>, <__main__.RubiksState object at 0x781c88f1d0>, <__main__.RubiksState object at 0x781c897020>, <__main__.RubiksState object at 0x781c79d6a0>, <__main__.RubiksState object at 0x781c8e9550>, <__main__.RubiksState object at 0x781c8e9850>, <__main__.RubiksState object at 0x781c8832f0>, <__main__.RubiksState object at 0x781c882c60>, <__main__.RubiksState object at 0x781c8c7850>]
-Moves: ['L']
-State: [['G', 'G', 'Y', 'R'], ['O', 'W', 'W', 'G'], ['Y', 'B', 'B', 'B'], ['O', 'W', 'O', 'R'], ['G', 'W', 'R', 'R'], ['O', 'Y', 'B', 'Y']]
-Moves: ['L inverse']
-State: [['R', 'G', 'W', 'R'], ['G', 'W', 'W', 'O'], ['Y', 'B', 'B', 'B'], ['O', 'Y', 'O', 'G'], ['O', 'W', 'B', 'R'], ['G', 'Y', 'R', 'Y']]
-Moves: ['R']
-State: [['G', 'Y', 'R', 'Y'], ['W', 'O', 'G', 'W'], ['B', 'Y', 'B', 'B'], ['R', 'B', 'W', 'O'], ['R', 'G', 'W', 'R'], ['G', 'O', 'Y', 'O']]
-Moves: ['R inverse']
-State: [['G', 'W', 'R', 'R'], ['W', 'O', 'G', 'W'], ['B', 'B', 'Y', 'B'], ['Y', 'B', 'Y', 'O'], ['R', 'O', 'W', 'O'], ['G', 'G', 'Y', 'R']]
-Moves: ['U']
-State: [['W', 'O', 'R', 'R'], ['O', 'B', 'G', 'W'], ['G', 'G', 'B', 'B'], ['Y', 'B', 'O', 'O'], ['W', 'R', 'R', 'W'], ['G', 'Y', 'Y', 'Y']]
-Moves: ['U inverse']
-State: [['Y', 'B', 'R', 'R'], ['G', 'G', 'G', 'W'], ['O', 'B', 'B', 'B'], ['W', 'O', 'O', 'O'], ['W', 'R', 'R', 'W'], ['G', 'Y', 'Y', 'Y']]
-Moves: ['D']
-State: [['G', 'G', 'G', 'W'], ['W', 'O', 'O', 'O'], ['Y', 'B', 'R', 'R'], ['O', 'B', 'B', 'B'], ['R', 'W', 'W', 'R'], ['Y', 'G', 'Y', 'Y']]
-Moves: ['D inverse']
-State: [['G', 'G', 'B', 'B'], ['W', 'O', 'R', 'R'], ['Y', 'B', 'O', 'O'], ['O', 'B', 'G', 'W'], ['R', 'W', 'W', 'R'], ['Y', 'Y', 'G', 'Y']]
-Moves: ['F']
-State: [['G', 'R', 'G', 'R'], ['W', 'R', 'G', 'W'], ['Y', 'B', 'G', 'B'], ['O', 'B', 'O', 'O'], ['R', 'W', 'Y', 'B'], ['O', 'W', 'Y', 'Y']]
-Moves: ['F inverse']
-State: [['R', 'G', 'R', 'G'], ['W', 'G', 'G', 'Y'], ['W', 'B', 'R', 'B'], ['O', 'B', 'O', 'O'], ['R', 'W', 'W', 'O'], ['B', 'Y', 'Y', 'Y']]
-Moves: ['B']
-State: [['G', 'G', 'R', 'R'], ['W', 'O', 'R', 'W'], ['Y', 'Y', 'B', 'Y'], ['O', 'O', 'O', 'B'], ['B', 'B', 'W', 'R'], ['G', 'Y', 'W', 'G']]
-Moves: ['B inverse']
-State: [['G', 'G', 'R', 'R'], ['Y', 'O', 'Y', 'W'], ['Y', 'R', 'B', 'W'], ['B', 'O', 'O', 'O'], ['G', 'W', 'W', 'R'], ['G', 'Y', 'B', 'B']]
+Truscott-Watters algorithm for solving the 2 x 2 Rubik's cube in polynomial or less time
 
-[Program finished]
 """
-# Proof of Concept 
-
 class RubiksState(object):
     def __init__(self, tlf, blf, trf, brf, tlb, blb, trb, brb, moves):
         self.tlf = tlf
@@ -424,7 +376,7 @@ def Choose(bs: int, rs: RubiksState) -> RubiksState:
 	
 	
 def Charles():
-    States = []
+    States = deque([])
 #    n = RubiksState(['O', 'B', 'Y'], ['R', 'B', 'Y', ], ['O', 'G', 'Y'], ['R', 'G', 'Y'], ['O', 'B', 'W'], ['R', 'B', 'W'], ['O', 'G', 'W'], ['R', 'G', 'W'], [])
     rs = RubiksState(["W", "O", "G"], ["G", "W", "R"],  ["R", "Y", "G"], ["Y", "B", "R"], ["R", "W", "B"], ["Y", "G", "O"], ["W", "B", "O"], ["Y", "B", "O"], [])
     L = []
@@ -439,6 +391,15 @@ def Charles():
     for s in States:
     	print("Moves: {}".format(s.moves))
     	print("State: {}".format(s.orientation))
+    while States:
+    	elem = States.popleft()
+    	if elem.is_solved == True:
+    		break
+    	else:
+    		for const in L:
+    			choice = Choose(const, elem)
+    			if choice != None:
+    				States.append(choice)
 #    for bs in L:
 #    	print(Choose(bs, rs))
 #    	c = Choose(bs, rs)
