@@ -48,6 +48,35 @@ import sys
 [Program finished]
 """
 
+"""
+0b1
+0b10
+0b100
+0b1000
+0b10000
+0b100000
+0b1000000
+0b10000000
+0b100000000
+0b1000000000
+0b10000000000
+0b100000000000
+0b1000000000000
+0b10000000000000
+0b100000000000000
+0b1000000000000000
+0b10000000000000000
+0b100000000000000000
+0b1000000000000000000
+[1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144]
+['L']
+['L inverse']
+[None, <__main__.RubiksState object at 0x7c89735e50>, None, <__main__.RubiksState object at 0x7c89735f90>, <__main__.RubiksState object at 0x7c89741350>, None, <__main__.RubiksState object at 0x7c897408a0>, <__main__.RubiksState object at 0x7c897171d0>, None, <__main__.RubiksState object at 0x7c8971f020>, <__main__.RubiksState object at 0x7c896256a0>, None, <__main__.RubiksState object at 0x7c89771550>, <__main__.RubiksState object at 0x7c89771850>, None, <__main__.RubiksState object at 0x7c8970ac60>, <__main__.RubiksState object at 0x7c8970b4d0>, None, <__main__.RubiksState object at 0x7c8974f850>]
+
+[Program finished]
+
+"""
+
 class RubiksState(object):
     def __init__(self, tlf, blf, trf, brf, tlb, blb, trb, brb, moves):
         self.tlf = tlf
@@ -336,7 +365,7 @@ def count():
 		yield c
 		c  <<= 1
 		
-def Choose(bs: int, rs: RubiksState):
+def Choose(bs: int, rs: RubiksState) -> RubiksState:
 	if (bs % 2 ** 18) == 0:
 		#Binv
 		state = rs.Binv()
@@ -404,6 +433,7 @@ def Choose(bs: int, rs: RubiksState):
 	elif (bs % 2 ** 3) == 0:
 		#Linv
 		state = rs.Linv()
+		print(state.moves)
 		return state
 		pass
 	elif (bs % 2 ** 2) == 0:
@@ -412,23 +442,45 @@ def Choose(bs: int, rs: RubiksState):
 	elif (bs % 2 ** 1) == 0:
 		#L
 		state = rs.L()
+		print(state.moves)
 		return state
-		pass
-	else:
-		print("1")
-		pass
-	return bs
+	
 	
 def Charles():
     States = deque([])
 #    n = RubiksState(['O', 'B', 'Y'], ['R', 'B', 'Y', ], ['O', 'G', 'Y'], ['R', 'G', 'Y'], ['O', 'B', 'W'], ['R', 'B', 'W'], ['O', 'G', 'W'], ['R', 'G', 'W'], [])
     rs = RubiksState(["W", "O", "G"], ["G", "W", "R"],  ["R", "Y", "G"], ["Y", "B", "R"], ["R", "W", "B"], ["Y", "G", "O"], ["W", "B", "O"], ["Y", "B", "O"], [])
     L = []
+    Q = []
     for e in Power():
     	L.append(e)
     print(L)
-    for bs in L:
-    	print(Choose(bs, rs))
+    for c in L:
+    	elem = Choose(c, rs)
+#    	print("elem returns {}".format(elem))
+#    	print(elem.moves, elem.orientation)
+    	Q.append(elem)
+#    for bs in L:
+#    	print(Choose(bs, rs))
+#    	c = Choose(bs, rs)
+#    	Q.append(c)
+    print(Q)
+#    is_solved = False
+#    while is_solved != True:
+#    	elem = Q.popleft()
+#    	print(elem.moves)
+#    	if elem.is_solved() == True:
+#    		is_solved = True
+#    		break
+#    while Q:
+#    	elem = Q.popleft()
+#    	for bs in L:
+#    		c = Choose(bs, elem)
+#    		Q.append(c)
+#    	if elem.is_solved() == True:
+#    		print(elem.moves, elem.orientation)
+    	
+    
 #all_L = []
 #for bs in L:
 #	Choose(bs)
