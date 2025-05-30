@@ -77,6 +77,34 @@ import sys
 
 """
 
+"""
+0b1
+0b10
+0b100
+0b1000
+0b10000
+0b100000
+0b1000000
+0b10000000
+0b100000000
+0b1000000000
+0b10000000000
+0b100000000000
+0b1000000000000
+0b10000000000000
+0b100000000000000
+0b1000000000000000
+0b10000000000000000
+0b100000000000000000
+0b1000000000000000000
+[1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144]
+['L']
+['L inverse']
+
+[Program finished]
+
+""" Proof of Concept
+
 class RubiksState(object):
     def __init__(self, tlf, blf, trf, brf, tlb, blb, trb, brb, moves):
         self.tlf = tlf
@@ -370,7 +398,6 @@ def Choose(bs: int, rs: RubiksState) -> RubiksState:
 		#Binv
 		state = rs.Binv()
 		return state
-		pass
 	elif (bs % 2 ** 17) == 0:
 		#B2
 		pass
@@ -435,7 +462,6 @@ def Choose(bs: int, rs: RubiksState) -> RubiksState:
 		state = rs.Linv()
 		print(state.moves)
 		return state
-		pass
 	elif (bs % 2 ** 2) == 0:
 		#L2
 		pass
@@ -444,27 +470,26 @@ def Choose(bs: int, rs: RubiksState) -> RubiksState:
 		state = rs.L()
 		print(state.moves)
 		return state
+	else:
+		pass
 	
 	
 def Charles():
-    States = deque([])
+    States = []
 #    n = RubiksState(['O', 'B', 'Y'], ['R', 'B', 'Y', ], ['O', 'G', 'Y'], ['R', 'G', 'Y'], ['O', 'B', 'W'], ['R', 'B', 'W'], ['O', 'G', 'W'], ['R', 'G', 'W'], [])
     rs = RubiksState(["W", "O", "G"], ["G", "W", "R"],  ["R", "Y", "G"], ["Y", "B", "R"], ["R", "W", "B"], ["Y", "G", "O"], ["W", "B", "O"], ["Y", "B", "O"], [])
     L = []
-    Q = []
     for e in Power():
     	L.append(e)
     print(L)
-    for c in L:
-    	elem = Choose(c, rs)
-#    	print("elem returns {}".format(elem))
-#    	print(elem.moves, elem.orientation)
-    	Q.append(elem)
+    for const in L:
+    	States.append(Choose(const, rs))
+    		
 #    for bs in L:
 #    	print(Choose(bs, rs))
 #    	c = Choose(bs, rs)
 #    	Q.append(c)
-    print(Q)
+   
 #    is_solved = False
 #    while is_solved != True:
 #    	elem = Q.popleft()
