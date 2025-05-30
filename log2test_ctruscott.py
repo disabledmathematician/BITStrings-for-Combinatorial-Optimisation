@@ -1,6 +1,7 @@
 # Charles Truscott
-# I love you Dad Mark William Watters
+
 """
+
 0b1
 0b10
 0b100
@@ -158,16 +159,41 @@ Caught it
 Modulo n to the x, 17
 Modulo n to the x, 18
 [[1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144], [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144], [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144]]
+0b1
+0b10
+0b100
+0b1000
+0b10000
+0b100000
+0b1000000
+0b10000000
+0b100000000
+0b1000000000
+0b10000000000
+0b100000000000
+0b1000000000000
+0b10000000000000
+0b100000000000000
+0b1000000000000000
+0b10000000000000000
 
 [Program finished]
-""" 
+
+"""
+from queue import deque
 def Power():
 	n = 2
 	for x in range(0, 18 + 1):
 		print(bin(n ** x))
 		yield n ** x
 		
-
+def count():
+	c = 1
+	max = 2 ** 17
+	while c < max:
+		yield c
+		c  <<= 1
+		
 def Choose(bs):
 	if (bs % 2 ** 18) == 0:
 		print("Modulo n to the x, 18")
@@ -253,3 +279,18 @@ for bs in L:
 for n in range(0, 3):
 	all_L.append(list(Choose(bs) for bs in L))
 print(all_L)
+for n in count():
+	print(bin(n))
+#Solution below is in polynomial time. I'm hoping to implement an optimal, logarithmic algorithm'
+#c1 = 0
+#c2 = 0
+#c3 = c1 + 1
+#while c1 < len(all_L):
+#	while c2 < len(all_L[0]):
+#		print("inner")
+#		print(c2)
+#		c2 += 1	
+#	print("outer")
+#	print(c1)
+#	c2 = 0
+#	c1 += 1
